@@ -1,0 +1,26 @@
+@import '../styles/utilities/variables';
+
+.dice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    cursor: pointer;
+    font: {
+        weight: bold;
+        size: 1.5em;
+    }
+    transition: all .2s;
+    &:hover, &:active {
+        transform: scale(1.03);
+        background-color: lighten($marked-dice, 20%)
+    }
+}
+
+.dice.marked {
+    background-color: $marked-dice;
+}

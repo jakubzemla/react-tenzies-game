@@ -1,0 +1,30 @@
+.dice-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-content: space-around;
+    row-gap: 20px;
+    column-gap: 20px;
+    width: max-content;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 50px;
+
+    .win-info {
+        position: absolute;
+        background-color: #000;
+        opacity: .9;
+        width: 100%;
+        height: 100%;
+        border-radius: .5em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        h2, p {
+            color: #fff;
+        }
+    }
+  }
+

@@ -1,0 +1,28 @@
+@import '../styles/utilities/variables';
+
+.buttons-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+
+    .game-button {
+        box-shadow: 0px 3.2px 7.68px rgba(0, 0, 0, 0.18);
+        background-color: $button-background;
+        color: $secondary-color;
+        border: none;
+        border-radius: 4px;
+        min-width: 40%;
+        width: max-content;
+        font-size: 1.5em;
+        padding: 10px 0;
+        cursor: pointer;
+        transition: all .2s;
+        &:hover, &:active {
+            background-color: lighten($button-background, 5%);
+            transform: scale(1.05)
+        }
+    }
+}
