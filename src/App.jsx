@@ -36,7 +36,7 @@ const App = () => {
     setDiceList(prevList => prevList.map(dice => dice.id != markedDice.id 
       ? dice 
       : {...dice, isMarked: !dice.isMarked}))
-    checkIsWinner()
+    // checkIsWinner()
   }
 
   const rollUnmarkedDice = () => {
@@ -47,8 +47,10 @@ const App = () => {
 
   const checkIsWinner = () => {
     const controlNumber = diceList[0]?.number
-    const markedList = diceList.filter(dice => dice.isMarked && dice.number === controlNumber)
-    {markedList.length === difficulty - 1 && setIsWinner(true)}
+    const allMarkedAndSame = diceList.every(dice => dice.isMarked && dice.number === controlNumber)
+    if (allMarkedAndSame && attempts != 0) {
+      setIsWinner(true)
+    }
   }
 
   const resetGame = () => {
@@ -61,6 +63,10 @@ const App = () => {
   useEffect(() => {
     getDiceList(difficulty)
   }, [difficulty])
+
+  useEffect(() => {
+    checkIsWinner()
+  }, [diceList])
 
   return (<main className="container">
     <div className="game-screen">
